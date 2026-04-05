@@ -3,128 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>X.CROP | Elite Revenue Intelligence</title>
+    <title>X.CROP | The Golden Protocol</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;500;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;400;800&display=swap" rel="stylesheet">
     <style>
-        body { 
-            background-color: #050a18; /* Deep Navy */
-            scroll-behavior: smooth; 
-        }
-        .gold-text {
-            background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+        body { background-color: #030712; color: #94a3b8; overflow-x: hidden; }
+        .gold-glow { color: #facc15; text-shadow: 0 0 20px rgba(250, 204, 21, 0.4); }
+        .gold-gradient {
+            background: linear-gradient(135deg, #fde68a 0%, #fbbf24 50%, #d97706 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        .gold-border {
-            border: 1px solid rgba(191, 149, 63, 0.2);
+        .navy-card {
+            background: rgba(15, 23, 42, 0.3);
+            border: 1px solid rgba(251, 191, 36, 0.1);
+            backdrop-filter: blur(12px);
         }
-        .gold-button {
-            background: linear-gradient(45deg, #bf953f, #aa771c);
-            transition: all 0.3s ease;
+        .gold-btn {
+            background: linear-gradient(to right, #fbbf24, #d97706);
+            transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        .gold-button:hover {
-            box-shadow: 0 0 20px rgba(191, 149, 63, 0.4);
-            transform: translateY(-1px);
+        .gold-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(217, 119, 6, 0.3);
         }
-        .navy-glass {
-            background: rgba(255, 255, 255, 0.02);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(191, 149, 63, 0.1);
+        .hero-blur {
+            position: absolute;
+            width: 500px; height: 500px;
+            background: radial-gradient(circle, rgba(30, 58, 138, 0.2) 0%, transparent 70%);
+            top: -10%; left: 50%; transform: translateX(-50%);
+            z-index: -1;
         }
-        .social-link { 
-            transition: all 0.3s ease; 
-            color: #475569; 
-            font-size: 11px; 
-            font-weight: 800; 
-            text-transform: uppercase; 
-            letter-spacing: 0.2em; 
-        }
-        .social-link:hover { color: #bf953f; }
     </style>
 </head>
-<body class="text-slate-300 font-['Plus_Jakarta_Sans'] antialiased">
+<body class="font-['Plus_Jakarta_Sans'] antialiased">
 
-    <div class="fixed top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-blue-900/10 blur-[140px] -z-10"></div>
-    <div class="fixed bottom-0 right-0 w-[400px] h-[400px] bg-yellow-900/5 blur-[120px] -z-10"></div>
+    <div class="hero-blur"></div>
 
-    <nav class="flex justify-between items-center px-10 py-8 max-w-6xl mx-auto">
-        <div class="text-2xl font-black tracking-tighter text-white italic">
-            X<span class="gold-text">.</span>CROP
+    <nav class="flex justify-between items-center px-8 py-10 max-w-7xl mx-auto">
+        <div class="text-3xl font-black tracking-tighter text-white italic">
+            X<span class="gold-glow">.</span>CROP
         </div>
-        <div class="hidden md:flex gap-10 items-center">
-            <div class="flex gap-8 mr-6 border-r border-white/5 pr-8">
-                <a href="#" class="social-link">Facebook</a>
-                <a href="#" class="social-link">X.Com</a>
-                <a href="#" class="social-link">Discord</a>
+        <div class="flex items-center gap-10">
+            <div class="hidden md:flex gap-8 text-[10px] font-bold uppercase tracking-[0.3em] text-slate-500">
+                <a href="#" class="hover:text-yellow-500 transition">Network</a>
+                <a href="#" class="hover:text-yellow-500 transition">Assets</a>
+                <a href="#" class="hover:text-yellow-500 transition">Security</a>
             </div>
-            <a href="https://hellcrop.vercel.app" class="px-8 py-2.5 gold-button text-[#050a18] rounded-full text-xs font-black uppercase tracking-widest">
-                Access Portal
+            <a href="https://hellcrop.vercel.app" class="gold-btn text-black px-8 py-2.5 rounded-full text-[10px] font-black uppercase tracking-widest shadow-xl">
+                Enter Terminal
             </a>
         </div>
     </nav>
 
-    <section class="max-w-5xl mx-auto text-center pt-32 pb-40 px-6">
-        <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-yellow-500/5 border border-yellow-500/20 text-[#bf953f] text-[10px] font-black uppercase tracking-[0.3em] mb-10">
-            <span class="relative flex h-2 w-2">
-              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75"></span>
-              <span class="relative inline-flex rounded-full h-2 w-2 bg-[#bf953f]"></span>
-            </span>
-            Elite System v2.0 Live
-        </span>
+    <main class="max-w-5xl mx-auto text-center pt-20 pb-32 px-6">
+        <div class="inline-block px-4 py-1 rounded-full border border-yellow-500/20 bg-yellow-500/5 mb-10">
+            <p class="text-[9px] font-black uppercase tracking-[0.4em] text-yellow-500/80">Protocol Identity: Elite-Class</p>
+        </div>
 
-        <h1 class="text-6xl md:text-8xl font-extrabold tracking-tighter text-white mb-8 leading-[1.05]">
-            Command the <br> <span class="gold-text italic">Gold Standard.</span>
+        <h1 class="text-7xl md:text-[100px] font-extrabold text-white tracking-tighter leading-none mb-10">
+            Infinite <span class="gold-gradient italic">Liquidity.</span>
         </h1>
 
-        <p class="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto mb-14 leading-relaxed font-light">
-            An exclusive autonomous engine designed for high-frequency revenue scaling. Built for those who demand precision.
+        <p class="text-slate-500 text-lg md:text-xl max-w-2xl mx-auto mb-16 font-light leading-relaxed">
+            The private engine for high-frequency revenue generation. <br class="hidden md:block"> 
+            No limits. No boundaries. Just pure execution.
         </p>
 
-        <form name="early-access" method="POST" data-netlify="true" class="relative max-w-md mx-auto group">
-            <div class="absolute -inset-1 bg-[#bf953f] rounded-2xl blur opacity-10 group-focus-within:opacity-25 transition duration-1000"></div>
-            <div class="relative flex bg-[#080f22] rounded-2xl border border-white/10 p-2 shadow-2xl">
-                <input type="email" name="email" placeholder="Enter executive email" required 
-                       class="bg-transparent pl-5 pr-2 py-4 flex-grow focus:outline-none text-white text-sm font-medium">
-                <button type="submit" class="gold-button text-[#050a18] px-8 py-4 rounded-xl font-black text-xs uppercase tracking-widest">
-                    Request Entry
-                </button>
-            </div>
-        </form>
-    </section>
+        <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+            <a href="#queue" class="gold-btn text-black px-12 py-5 rounded-2xl font-black text-xs uppercase tracking-widest w-full md:w-auto">
+                Join the Queue
+            </a>
+            <a href="#" class="px-12 py-5 rounded-2xl border border-white/10 hover:bg-white/5 transition text-white font-black text-xs uppercase tracking-widest w-full md:w-auto">
+                Whitepaper
+            </a>
+        </div>
+    </main>
 
-    <section class="max-w-6xl mx-auto px-6 pb-48">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="p-10 rounded-[32px] navy-glass hover:border-yellow-500/30 transition-all group">
-                <div class="text-[#bf953f] mb-6 font-black uppercase tracking-[0.2em] text-[10px]">Processing Flow</div>
-                <div class="text-5xl font-extrabold text-white italic tracking-tighter group-hover:gold-text transition-all">$999T+</div>
+    <section id="queue" class="max-w-6xl mx-auto px-6 pb-40">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-1">
+            <div class="navy-card p-12 text-center rounded-l-[40px] border-r-0">
+                <p class="text-[10px] font-black text-yellow-600 uppercase tracking-widest mb-4">Current Queue</p>
+                <h3 class="text-5xl font-black text-white italic">#1,402</h3>
             </div>
-            
-            <div class="p-10 rounded-[32px] bg-gradient-to-br from-yellow-500/10 to-transparent border border-yellow-500/20 shadow-2xl relative overflow-hidden">
-                <div class="absolute top-0 right-0 w-32 h-32 bg-yellow-500/10 blur-3xl"></div>
-                <div class="text-yellow-200 mb-6 font-black uppercase tracking-[0.2em] text-[10px]">Uptime Priority</div>
-                <div class="text-5xl font-extrabold text-white italic tracking-tighter">99.99%</div>
+            <div class="bg-yellow-500/10 border-y border-yellow-500/20 p-12 text-center relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-t from-yellow-500/5 to-transparent"></div>
+                <p class="text-[10px] font-black text-yellow-400 uppercase tracking-widest mb-4">System Uptime</p>
+                <h3 class="text-5xl font-black text-white italic">100%</h3>
             </div>
-
-            <div class="p-10 rounded-[32px] navy-glass hover:border-yellow-500/30 transition-all group">
-                <div class="text-[#bf953f] mb-6 font-black uppercase tracking-[0.2em] text-[10px]">Latency Control</div>
-                <div class="text-5xl font-extrabold text-white italic tracking-tighter group-hover:gold-text transition-all">&lt; 1.5m</div>
+            <div class="navy-card p-12 text-center rounded-r-[40px] border-l-0">
+                <p class="text-[10px] font-black text-yellow-600 uppercase tracking-widest mb-4">Node Latency</p>
+                <h3 class="text-5xl font-black text-white italic">0.01<span class="text-xl">ms</span></h3>
             </div>
         </div>
     </section>
 
-    <footer class="py-24 text-center border-t border-white/5 bg-[#030712]">
-        <div class="text-2xl font-black text-white mb-10 italic tracking-widest">
-            X<span class="gold-text">.</span>CROP
+    <footer class="py-20 border-t border-white/5 bg-[#02040a]">
+        <div class="max-w-6xl mx-auto px-10 flex flex-col md:flex-row justify-between items-center gap-10">
+            <div class="text-xl font-black text-white italic">X<span class="gold-glow">.</span>CROP</div>
+            <div class="flex gap-8">
+                <a href="#" class="text-[10px] font-bold uppercase tracking-widest text-slate-600 hover:text-yellow-500 transition">Twitter</a>
+                <a href="#" class="text-[10px] font-bold uppercase tracking-widest text-slate-600 hover:text-yellow-500 transition">Telegram</a>
+                <a href="#" class="text-[10px] font-bold uppercase tracking-widest text-slate-600 hover:text-yellow-500 transition">Privacy</a>
+            </div>
+            <p class="text-[9px] font-bold text-slate-700 uppercase tracking-[0.2em]">© 2026 X.CROP Precision Engineering</p>
         </div>
-        <div class="flex justify-center gap-12 mb-12">
-            <a href="#" class="social-link">Instagram</a>
-            <a href="#" class="social-link">LinkedIn</a>
-            <a href="#" class="social-link">Twitter</a>
-        </div>
-        <p class="text-slate-600 text-[9px] uppercase tracking-[0.5em] font-bold">
-            © 2026 ARCHITECTED BY X.CROP FOR ELITE ENTERPRISES
-        </p>
     </footer>
 
 </body>
