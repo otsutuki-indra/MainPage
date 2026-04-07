@@ -11,692 +11,163 @@
             box-sizing: border-box;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: #0a0a0a; /* Dark background */
-            color: #e5e5e5; /* Light grey text */
-            line-height: 1.6;
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            /* Integrating the triangular theme pattern */
+            background-image: 
+                linear-gradient(to bottom, rgba(10, 10, 10, 0.8), #0a0a0a),
+                url('theme.png'); 
+            background-size: cover;
+            background-attachment: fixed;
+            color: #e5e5e5;
             overflow-x: hidden;
-            position: relative;
         }
 
-        /* Glassmorphism Background Animation */
+        /* Fast Moving Bubbles */
         .bg-animation {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
+            inset: 0;
             pointer-events: none;
-            z-index: 0;
+            z-index: 1;
         }
 
         .bubble {
             position: absolute;
             border-radius: 50%;
-            opacity: 0.1; /* Translucent */
-            background: #2a5f2a; /* Dark green bubble */
-            filter: blur(5px);
-            animation: float-fast infinite ease-in-out;
+            background: radial-gradient(circle, #2a5f2a, transparent);
+            opacity: 0.2;
+            filter: blur(40px);
+            animation: moveFast 4s infinite alternate ease-in-out;
         }
 
-        /* Fast Floating Animation */
-        @keyframes float-fast {
-            0%, 100% {
-                transform: translate(0, 0);
-            }
-            25% {
-                transform: translate(100px, 150px);
-            }
-            50% {
-                transform: translate(-100px, 100px);
-            }
-            75% {
-                transform: translate(150px, -100px);
-            }
+        .b1 { width: 300px; height: 300px; top: 10%; left: 10%; }
+        .b2 { width: 400px; height: 400px; bottom: 10%; right: 10%; animation-duration: 3s; }
+
+        @keyframes moveFast {
+            from { transform: translate(0, 0) scale(1); }
+            to { transform: translate(150px, 100px) scale(1.2); }
         }
 
-        /* Bubble Positioning and Speed */
-        .bubble1 { width: 400px; height: 400px; top: -10%; left: 10%; animation-duration: 8s; }
-        .bubble2 { width: 300px; height: 300px; bottom: 5%; right: 5%; animation-duration: 6s; animation-delay: -2s; }
-        .bubble3 { width: 200px; height: 200px; top: 40%; left: -5%; animation-duration: 10s; animation-delay: -4s; }
-        .bubble4 { width: 350px; height: 350px; bottom: 20%; left: 60%; animation-duration: 7s; animation-delay: -1s; }
-
-        /* Navigation */
+        /* Glassmorphic Navigation */
         nav {
             position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(15, 15, 15, 0.85); /* Translucent dark nav */
-            backdrop-filter: blur(15px); /* Glassmorphism blur */
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08); /* Subtle border */
-            padding: 1rem 3rem;
+            top: 0; width: 100%;
+            padding: 1.5rem 3rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            background: rgba(15, 15, 15, 0.7);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             z-index: 1000;
         }
 
-        .logo {
-            font-size: 1.6rem;
-            font-weight: 800;
-            color: #fff; /* White logo */
-            letter-spacing: -0.5px;
-            background: linear-gradient(135deg, #fff 0%, #2a5f2a 100%); /* Green gradient logo */
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        nav ul {
-            display: flex;
-            gap: 3rem;
-            list-style: none;
-        }
-
-        nav a {
-            color: #aaa; /* Lighter grey for nav links */
-            text-decoration: none;
-            transition: color 0.3s;
-            font-size: 0.95rem;
-            font-weight: 500;
-        }
-
-        nav a:hover {
-            color: #fff; /* Hover to white */
-        }
-
-        .cta-nav {
-            background: #2a5f2a; /* Green CTA */
-            color: #fff;
-            padding: 0.65rem 1.6rem;
-            border-radius: 6px;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-
-        .cta-nav:hover {
-            background: #3d7f3d; /* Darker green on hover */
-            box-shadow: 0 0 15px rgba(42, 95, 42, 0.6); /* Green glow on hover */
-        }
+        .logo { font-size: 1.8rem; font-weight: 900; color: #fff; letter-spacing: -1px; }
 
         /* Hero Section */
         .hero {
-            margin-top: 70px;
-            min-height: 100vh;
+            height: 100vh;
             display: flex;
-            align-items: center;
+            flex-direction: column;
             justify-content: center;
-            padding: 4rem 3rem;
+            align-items: center;
+            text-align: center;
             position: relative;
             z-index: 10;
-        }
-
-        .hero-content {
-            max-width: 950px;
-            text-align: center;
-        }
-
-        .hero-tag {
-            font-size: 0.8rem;
-            color: #3d7f3d; /* Lighter green for tag */
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 2rem;
-            font-weight: 700;
         }
 
         .hero h1 {
-            font-size: 5.5rem;
-            font-weight: 900;
-            margin-bottom: 1.5rem;
-            letter-spacing: -2px;
-            line-height: 1.05;
-            color: #fff; /* White hero title */
-            background: linear-gradient(135deg, #fff 0%, #2a5f2a 100%); /* Green gradient title */
+            font-size: 5rem;
+            background: linear-gradient(to right, #fff, #2a5f2a);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-        }
-
-        .hero-subtitle {
-            font-size: 1.3rem;
-            color: #ccc; /* Light grey subtitle */
-            margin-bottom: 1.5rem;
-            font-weight: 400;
-            line-height: 1.5;
-        }
-
-        .hero-desc {
-            font-size: 1rem;
-            color: #aaa; /* Light grey description */
-            margin-bottom: 3rem;
-            line-height: 1.8;
-            max-width: 650px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
+            margin-bottom: 1rem;
         }
 
         .btn-primary {
-            background: #2a5f2a; /* Green primary button */
-            color: #fff;
+            background: #2a5f2a;
+            color: white;
             padding: 1rem 2.5rem;
             border: none;
             border-radius: 8px;
-            font-size: 1rem;
-            font-weight: 600;
+            font-weight: 700;
             cursor: pointer;
-            transition: all 0.3s;
+            transition: 0.3s;
+            text-decoration: none;
         }
 
         .btn-primary:hover {
-            background: #3d7f3d;
-            transform: translateY(-2px);
-            box-shadow: 0 0 20px rgba(42, 95, 42, 0.7); /* Green glow on hover */
+            box-shadow: 0 0 20px #2a5f2a;
+            transform: translateY(-3px);
         }
 
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.05); /* Translucent dark secondary */
-            color: #fff; /* White text */
-            padding: 1rem 2.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            backdrop-filter: blur(5px);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.1);
-            transform: translateY(-2px);
-        }
-
-        /* Features Section */
-        .features {
-            padding: 8rem 3rem;
-            background: #0d0d0d; /* Dark grey for sections */
-            position: relative;
-            z-index: 10;
-        }
-
-        .features-container {
-            max-width: 1300px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            font-size: 2.8rem;
-            font-weight: 900;
-            margin-bottom: 1rem;
-            text-align: center;
-            color: #fff; /* White title */
-        }
-
-        .section-subtitle {
-            font-size: 1.1rem;
-            color: #aaa;
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem;
-        }
-
-        .feature-card {
-            background: rgba(20, 20, 20, 0.6); /* Translucent dark card */
-            padding: 2.5rem;
-            border-radius: 12px;
-            transition: all 0.3s;
-            border: 1px solid rgba(42, 95, 42, 0.15); /* Subtle green border */
-            backdrop-filter: blur(10px); /* Glassmorphism blur */
-        }
-
-        .feature-card:hover {
-            box-shadow: 0 10px 30px rgba(42, 95, 42, 0.3); /* Green glow on hover */
-            transform: translateY(-4px);
-            border-color: rgba(42, 95, 42, 0.5); /* Glowing border on hover */
-        }
-
-        .feature-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            display: block;
-        }
-
-        .feature-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            color: #fff; /* White title */
-            font-weight: 700;
-        }
-
-        .feature-card p {
-            color: #ccc;
-            font-size: 0.95rem;
-            line-height: 1.7;
-        }
-
-        /* Stats Section */
-        .stats {
-            padding: 6rem 3rem;
-            background: #000;
-            color: #fff;
-            position: relative;
-            z-index: 10;
-        }
-
-        .stats-container {
-            max-width: 1300px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 3rem;
-            text-align: center;
-        }
-
-        .stat {
-            padding: 2rem;
-        }
-
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 900;
-            color: #3d7f3d; /* Lighter green for numbers */
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            color: #aaa;
-            font-size: 0.95rem;
-            font-weight: 500;
-        }
-
-        /* Pricing Section */
-        .pricing {
-            padding: 8rem 3rem;
-            position: relative;
-            z-index: 10;
-        }
-
-        .pricing-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .pricing-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-            align-items: start;
-        }
-
-        .price-card {
-            background: rgba(20, 20, 20, 0.6); /* Translucent dark card */
-            border: 2px solid rgba(42, 95, 42, 0.15); /* Subtle green border */
-            padding: 3rem 2.5rem;
-            border-radius: 12px;
-            transition: all 0.3s;
-            display: flex;
-            flex-direction: column;
-            backdrop-filter: blur(10px); /* Glassmorphism blur */
-        }
-
-        .price-card:hover {
-            border-color: #3d7f3d; /* Glowing green border on hover */
-            box-shadow: 0 15px 40px rgba(42, 95, 42, 0.4); /* Green glow on hover */
-        }
-
-        .price-card.featured {
-            border: 2px solid #2a5f2a; /* Darker green border for featured */
-            box-shadow: 0 15px 40px rgba(42, 95, 42, 0.5); /* Stronger green glow */
-            transform: scale(1.05);
-            background: rgba(42, 95, 42, 0.1); /* Subtle green background for featured */
-        }
-
-        .price-badge {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.1); /* Translucent badge */
-            color: #fff;
-            padding: 0.4rem 1rem;
-            border-radius: 4px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            width: fit-content;
-        }
-
-        .price-card.featured .price-badge {
-            background: #2a5f2a; /* Green badge for featured */
-        }
-
-        .price-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 1rem;
-            color: #fff; /* White title */
-            font-weight: 700;
-        }
-
-        .price {
-            font-size: 2.8rem;
-            font-weight: 900;
-            color: #3d7f3d; /* Lighter green for price */
-            margin-bottom: 0.5rem;
-        }
-
-        .price-period {
-            color: #999;
-            font-size: 0.9rem;
-            margin-bottom: 2rem;
-        }
-
-        .price-features {
-            list-style: none;
-            margin-bottom: 2rem;
-            flex-grow: 1;
-        }
-
-        .price-features li {
-            padding: 0.8rem 0;
-            color: #ccc;
-            font-size: 0.95rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .price-features li:before {
-            content: "✓ ";
-            color: #3d7f3d; /* Lighter green for checkmark */
-            font-weight: 800;
-            margin-right: 0.8rem;
-        }
-
-        .price-cta {
-            background: rgba(255, 255, 255, 0.05); /* Translucent dark button */
-            color: #fff;
-            padding: 1rem;
-            border: none;
-            border-radius: 8px;
-            font-size: 0.95rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .price-card.featured .price-cta {
-            background: #2a5f2a; /* Green CTA for featured */
-        }
-
-        .price-cta:hover {
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        .price-card.featured .price-cta:hover {
-            background: #3d7f3d;
-        }
-
-        /* Footer */
+        /* Footer from image lik.png */
         footer {
-            background: #0d0d0d; /* Dark grey for footer */
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-            padding: 3rem;
-            text-align: center;
-            color: #aaa;
-            position: relative;
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.9rem;
+            color: #666;
             z-index: 10;
+            position: relative;
         }
 
         .footer-content {
-            max-width: 1300px;
-            margin: 0 auto;
-        }
-
-        .footer-links {
             display: flex;
-            gap: 2.5rem;
-            justify-content: center;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
+            align-items: center;
+            gap: 15px;
         }
 
-        .footer-links a {
-            color: #aaa;
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.3s;
-        }
+        .footer-content a { color: #888; text-decoration: none; }
+        .footer-content a:hover { color: #fff; }
+        .social-icons { margin-left: 15px; display: flex; gap: 10px; border-left: 1px solid #333; padding-left: 15px; }
 
-        .footer-links a:hover {
-            color: #fff;
-        }
-
-        .footer-divider {
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-            padding-top: 2rem;
-            margin-top: 2rem;
-            font-size: 0.85rem;
-            color: #888;
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            nav {
-                padding: 1rem;
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            nav ul {
-                flex-direction: column;
-                gap: 0.5rem;
-                text-align: center;
-                display: none; /* Hide nav links on mobile */
-            }
-
-            .hero {
-                margin-top: 150px;
-                padding: 2rem;
-                min-height: auto;
-            }
-
-            .hero h1 {
-                font-size: 2.8rem;
-            }
-
-            .hero-subtitle {
-                font-size: 1.1rem;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-            }
-
-            .btn-primary, .btn-secondary {
-                width: 100%;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .price-card.featured {
-                transform: scale(1);
-            }
-
-            .features, .pricing {
-                padding: 4rem 1.5rem;
-            }
-        }
     </style>
 </head>
 <body>
+
     <div class="bg-animation">
-        <div class="bubble bubble1"></div>
-        <div class="bubble bubble2"></div>
-        <div class="bubble bubble3"></div>
-        <div class="bubble bubble4"></div>
+        <div class="bubble b1"></div>
+        <div class="bubble b2"></div>
     </div>
 
     <nav>
-        <div class="logo">HellCrop</div>
-        <ul>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#pricing">Pricing</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <button class="cta-nav">Start Now</button>
+        <div class="logo">ᎻᎬᏞᏞᏟᎡᎾᏢ</div>
+        <div style="display:flex; gap:20px; align-items:center;">
+            <a href="#" style="color:#aaa; text-decoration:none;">Home</a>
+            <a href="#" class="btn-primary">Start Now</a>
+        </div>
     </nav>
 
     <section class="hero">
-        <div class="hero-content">
-            <p class="hero-tag">Scale Your Business</p>
-            <h1>Grow Without Limits</h1>
-            <p class="hero-subtitle">Enterprise-grade infrastructure. Built for ambition.</p>
-            <p class="hero-desc">Transform how you scale. From startup to unicorn, we've got the tools to help you succeed.</p>
-            <div class="cta-buttons">
-                <button class="btn-primary">Start Free Trial</button>
-                <button class="btn-secondary">View Demo</button>
-            </div>
-        </div>
+        <h1>Grow Without Limits</h1>
+        <p style="color:#888; max-width:600px; margin-bottom:2rem;">
+            Enterprise-grade infrastructure meeting the triangular geometric precision of the future.
+        </p>
+        <a href="#" class="btn-primary">Start Free Trial</a>
     </section>
 
-    <section class="features" id="features">
-        <div class="features-container">
-            <h2 class="section-title">Powerful Features</h2>
-            <p class="section-subtitle">Everything you need to scale your business successfully</p>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <span class="feature-icon">⚡</span>
-                    <h3>Lightning Fast</h3>
-                    <p>Built for speed. Our platform handles millions of transactions with sub-100ms latency.</p>
-                </div>
-                <div class="feature-card">
-                    <span class="feature-icon">🔒</span>
-                    <h3>Bank-Grade Security</h3>
-                    <p>Enterprise security standards. SOC 2 Type II compliant, and GDPR ready.</p>
-                </div>
-                <div class="feature-card">
-                    <span class="feature-icon">📊</span>
-                    <h3>Advanced Analytics</h3>
-                    <p>Real-time dashboards and insights. Track what matters, make data-driven decisions.</p>
-                </div>
+    <footer>
+        <div class="footer-content">
+            <span>© 2026 HellCrop. All rights reserved.</span>
+            <span>|</span>
+            <a href="#">Home</a>
+            <span>|</span>
+            <a href="#">Terms of Use</a>
+            <span>|</span>
+            <a href="#">Sign In</a>
+            <div class="social-icons">
+                <span>𝕏</span>
+                <span>▶</span>
+                <span>📷</span>
             </div>
         </div>
-    </section>
+    </footer>
 
-    <section class="stats">
-        <div class="stats-container">
-            <div class="stat">
-                <div class="stat-number">200K+</div>
-                <div class="stat-label">Active Users</div>
-            </div>
-            <div class="stat">
-                <div class="stat-number">99.99%</div>
-                <div class="stat-label">Uptime</div>
-            </div>
-            <div class="stat">
-                <div class="stat-number">10B+</div>
-                <div class="stat-label">Daily Operations</div>
-            </div>
-            <div class="stat">
-                <div class="stat-number">50ms</div>
-                <div class="stat-label">Response Time</div>
-            </div>
-        </div>
-    </section>
-
-    <section class="pricing" id="pricing">
-        <div class="pricing-container">
-            <div class="pricing-header">
-                <h2 class="section-title">Simple Pricing</h2>
-                <p class="section-subtitle">Pay only for what you use. Scale as you grow.</p>
-            </div>
-            <div class="pricing-grid">
-                <div class="price-card">
-                    <div class="price-badge">Starter</div>
-                    <h3>Starter</h3>
-                    <div class="price">$49</div>
-                    <div class="price-period">per month</div>
-                    <ul class="price-features">
-                        <li>Up to 1M transactions</li>
-                        <li>Basic analytics</li>
-                        <li>Email support</li>
-                        <li>2 team members</li>
-                    </ul>
-                    <button class="price-cta">Get Started</button>
-                </div>
-                <div class="price-card featured">
-                    <div class="price-badge">Popular</div>
-                    <h3>Professional</h3>
-                    <div class="price">$199</div>
-                    <div class="price-period">per month</div>
-                    <ul class="price-features">
-                        <li>Up to 100M transactions</li>
-                        <li>Advanced analytics</li>
-                        <li>24/7 Priority support</li>
-                        <li>Unlimited team members</li>
-                    </ul>
-                    <button class="price-cta">Get Started</button>
-                </div>
-                <div class="price-card">
-                    <div class="price-badge">Enterprise</div>
-                    <h3>Enterprise</h3>
-                    <div class="price">Custom</div>
-                    <div class="price-period">tailored plan</div>
-                    <ul class="price-features">
-                        <li>Unlimited transactions</li>
-                        <li>Custom features</li>
-                        <li>Dedicated support</li>
-                        <li>SLA guarantee</li>
-                    </ul>
-                    <button class="price-cta">Contact Us</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-<footer class="footer">
-    <div class="footer-inner">
-        <span>© 2026 HellCrop. All rights reserved.</span><span>|</span>
-        <a href="index.html">Home</a><span>|</span>
-        <a href="terms.html">Terms of Use</a><span>|</span>
-        <a href="policy.html">Privacy Policy</a>
-        <div class="footer-socials">
-            <a href="https://x.com" target="_blank" aria-label="X">
-                <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-            </a>
-            <a href="https://youtube.com" target="_blank" aria-label="YouTube">
-                <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-            </a>
-            <a href="https://instagram.com" target="_blank" aria-label="Instagram">
-                <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849s-.011 3.584-.069 4.849c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.849-.07c-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849s.012-3.584.07-4.849c.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16.5a4.338 4.338 0 1 1 0-8.676 4.338 4.338 0 0 1 0 8.676zM18.406 5.594a1.44 1.44 0 1 1-2.88 0 1.44 1.44 0 0 1 2.88 0z"/></svg>
-            </a>
-            <a href="https://facebook.com" target="_blank" aria-label="Facebook">
-                <svg viewBox="0 0 24 24"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/></svg>
-            </a>
-        </div>
-    </div>
-</footer>
+</body>
+</html>
