@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HellScale.v1 - Scale Your Business</title>
+    <title>HellCrop - Scale Your Growth</title>
     <style>
         * {
             margin: 0;
@@ -16,9 +16,9 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-            background: #0f0f0f;
-            color: #e5e5e5;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #ffffff;
+            color: #1a1a1a;
             line-height: 1.6;
             overflow-x: hidden;
         }
@@ -28,10 +28,10 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(15, 15, 15, 0.95);
+            background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-            padding: 1.2rem 2.5rem;
+            border-bottom: 1px solid #e5e5e5;
+            padding: 1rem 3rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -39,43 +39,35 @@
         }
 
         .logo {
-            font-size: 1.3rem;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            color: #ffffff;
-        }
-
-        .logo-sub {
-            font-size: 0.75rem;
-            color: #888;
-            display: block;
-            letter-spacing: 2px;
-            margin-top: -5px;
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #000;
+            letter-spacing: -0.5px;
         }
 
         nav ul {
             display: flex;
-            gap: 4rem;
+            gap: 3rem;
             list-style: none;
         }
 
         nav a {
-            color: #aaa;
+            color: #666;
             text-decoration: none;
             transition: color 0.3s;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             font-weight: 500;
         }
 
         nav a:hover {
-            color: #fff;
+            color: #000;
         }
 
         .cta-nav {
-            background: #ffffff;
-            color: #000;
-            padding: 0.7rem 1.8rem;
-            border-radius: 4px;
+            background: #000;
+            color: #fff;
+            padding: 0.65rem 1.6rem;
+            border-radius: 6px;
             border: none;
             cursor: pointer;
             transition: all 0.3s;
@@ -84,7 +76,7 @@
         }
 
         .cta-nav:hover {
-            background: #f0f0f0;
+            background: #333;
         }
 
         /* Hero Section */
@@ -94,7 +86,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 4rem 2.5rem;
+            padding: 4rem 3rem;
             position: relative;
             overflow: hidden;
         }
@@ -102,88 +94,83 @@
         .hero::before {
             content: '';
             position: absolute;
-            width: 800px;
-            height: 800px;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.03) 0%, transparent 70%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(79, 172, 254, 0.08) 0%, transparent 70%);
             border-radius: 50%;
-            top: -20%;
-            right: -10%;
+            top: -5%;
+            right: 10%;
             pointer-events: none;
         }
 
         .hero::after {
             content: '';
             position: absolute;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.02) 0%, transparent 70%);
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(34, 197, 94, 0.06) 0%, transparent 70%);
             border-radius: 50%;
-            bottom: -15%;
-            left: -5%;
+            bottom: 5%;
+            left: 5%;
             pointer-events: none;
         }
 
         .hero-content {
-            max-width: 900px;
+            max-width: 950px;
             text-align: center;
             position: relative;
             z-index: 10;
         }
 
-        .company-label {
-            font-size: 0.85rem;
-            color: #888;
+        .hero-tag {
+            font-size: 0.8rem;
+            color: #4faffe;
             text-transform: uppercase;
             letter-spacing: 2px;
             margin-bottom: 2rem;
-            font-weight: 600;
+            font-weight: 700;
         }
 
         .hero h1 {
-            font-size: 5rem;
-            font-weight: 800;
+            font-size: 5.5rem;
+            font-weight: 900;
             margin-bottom: 1.5rem;
             letter-spacing: -2px;
-            line-height: 1.1;
-            color: #ffffff;
-        }
-
-        .hero h1 strong {
-            color: #ffffff;
-            font-weight: 800;
+            line-height: 1.05;
+            color: #000;
         }
 
         .hero-subtitle {
-            font-size: 1.4rem;
-            color: #bbb;
-            margin-bottom: 2rem;
-            font-weight: 300;
-            line-height: 1.6;
+            font-size: 1.3rem;
+            color: #555;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+            line-height: 1.5;
         }
 
         .hero-desc {
             font-size: 1rem;
-            color: #999;
-            margin-bottom: 2.5rem;
+            color: #777;
+            margin-bottom: 3rem;
             line-height: 1.8;
-            max-width: 700px;
+            max-width: 650px;
             margin-left: auto;
             margin-right: auto;
         }
 
         .cta-buttons {
             display: flex;
-            gap: 1.2rem;
+            gap: 1rem;
             justify-content: center;
             flex-wrap: wrap;
         }
 
         .btn-primary {
-            background: #ffffff;
-            color: #000;
+            background: #4faffe;
+            color: #fff;
             padding: 1rem 2.5rem;
             border: none;
-            border-radius: 4px;
+            border-radius: 8px;
             font-size: 1rem;
             font-weight: 600;
             cursor: pointer;
@@ -191,16 +178,16 @@
         }
 
         .btn-primary:hover {
-            background: #f0f0f0;
+            background: #3b94e8;
             transform: translateY(-2px);
         }
 
         .btn-secondary {
-            background: transparent;
-            color: #fff;
+            background: #f3f3f3;
+            color: #000;
             padding: 1rem 2.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 4px;
+            border: none;
+            border-radius: 8px;
             font-size: 1rem;
             font-weight: 600;
             cursor: pointer;
@@ -208,43 +195,52 @@
         }
 
         .btn-secondary:hover {
-            border-color: rgba(255, 255, 255, 0.8);
-            background: rgba(255, 255, 255, 0.05);
+            background: #e5e5e5;
             transform: translateY(-2px);
         }
 
         /* Features Section */
         .features {
-            padding: 8rem 2.5rem;
-            max-width: 1400px;
+            padding: 8rem 3rem;
+            background: #f9f9f9;
+        }
+
+        .features-container {
+            max-width: 1300px;
             margin: 0 auto;
         }
 
         .section-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 4rem;
+            font-size: 2.8rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
             text-align: center;
-            color: #ffffff;
+            color: #000;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: #777;
+            text-align: center;
+            margin-bottom: 4rem;
         }
 
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 3rem;
+            gap: 2.5rem;
         }
 
         .feature-card {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: #fff;
             padding: 2.5rem;
-            border-radius: 8px;
+            border-radius: 12px;
             transition: all 0.3s;
+            border: 1px solid #f0f0f0;
         }
 
         .feature-card:hover {
-            background: rgba(255, 255, 255, 0.04);
-            border-color: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
             transform: translateY(-4px);
         }
 
@@ -257,26 +253,25 @@
         .feature-card h3 {
             font-size: 1.3rem;
             margin-bottom: 1rem;
-            color: #ffffff;
-            font-weight: 600;
+            color: #000;
+            font-weight: 700;
         }
 
         .feature-card p {
-            color: #aaa;
+            color: #777;
             font-size: 0.95rem;
             line-height: 1.7;
         }
 
         /* Stats Section */
         .stats {
-            padding: 6rem 2.5rem;
-            background: rgba(255, 255, 255, 0.01);
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 6rem 3rem;
+            background: #000;
+            color: #fff;
         }
 
         .stats-container {
-            max-width: 1400px;
+            max-width: 1300px;
             margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -285,88 +280,99 @@
         }
 
         .stat {
-            padding: 2rem 0;
+            padding: 2rem;
         }
 
         .stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #ffffff;
+            font-size: 3rem;
+            font-weight: 900;
+            color: #4faffe;
             margin-bottom: 0.5rem;
         }
 
         .stat-label {
-            color: #888;
-            font-size: 0.9rem;
+            color: #aaa;
+            font-size: 0.95rem;
             font-weight: 500;
         }
 
         /* Pricing Section */
         .pricing {
-            padding: 8rem 2.5rem;
-            max-width: 1400px;
-            margin: 0 auto;
+            padding: 8rem 3rem;
         }
 
         .pricing-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
+        .pricing-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
         .price-card {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            padding: 2.5rem;
-            border-radius: 8px;
+            background: #fff;
+            border: 2px solid #f0f0f0;
+            padding: 3rem 2.5rem;
+            border-radius: 12px;
             transition: all 0.3s;
             display: flex;
             flex-direction: column;
         }
 
-        .price-card.featured {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            transform: scale(1.05);
+        .price-card:hover {
+            border-color: #4faffe;
+            box-shadow: 0 15px 40px rgba(79, 172, 254, 0.1);
         }
 
-        .price-card:hover {
-            background: rgba(255, 255, 255, 0.04);
-            border-color: rgba(255, 255, 255, 0.15);
+        .price-card.featured {
+            border: 2px solid #4faffe;
+            box-shadow: 0 15px 40px rgba(79, 172, 254, 0.15);
+            transform: scale(1.05);
         }
 
         .price-badge {
             display: inline-block;
-            background: rgba(255, 255, 255, 0.1);
-            color: #fff;
-            padding: 0.4rem 0.8rem;
-            border-radius: 3px;
+            background: #f0f0f0;
+            color: #000;
+            padding: 0.4rem 1rem;
+            border-radius: 4px;
             font-size: 0.75rem;
-            font-weight: 600;
+            font-weight: 700;
             margin-bottom: 1rem;
             text-transform: uppercase;
             letter-spacing: 1px;
             width: fit-content;
         }
 
+        .price-card.featured .price-badge {
+            background: #4faffe;
+            color: #fff;
+        }
+
         .price-card h3 {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             margin-bottom: 1rem;
-            color: #ffffff;
-            font-weight: 600;
+            color: #000;
+            font-weight: 700;
         }
 
         .price {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #ffffff;
+            font-size: 2.8rem;
+            font-weight: 900;
+            color: #4faffe;
             margin-bottom: 0.5rem;
         }
 
         .price-period {
-            color: #888;
+            color: #999;
             font-size: 0.9rem;
             margin-bottom: 2rem;
         }
@@ -378,25 +384,25 @@
         }
 
         .price-features li {
-            padding: 0.7rem 0;
-            color: #aaa;
-            font-size: 0.9rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 0.8rem 0;
+            color: #666;
+            font-size: 0.95rem;
+            border-bottom: 1px solid #f0f0f0;
         }
 
         .price-features li:before {
             content: "✓ ";
-            color: #fff;
-            font-weight: 600;
-            margin-right: 0.5rem;
+            color: #4faffe;
+            font-weight: 800;
+            margin-right: 0.8rem;
         }
 
         .price-cta {
-            background: transparent;
-            color: #fff;
+            background: #f3f3f3;
+            color: #000;
             padding: 1rem;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 4px;
+            border: none;
+            border-radius: 8px;
             font-size: 0.95rem;
             font-weight: 600;
             cursor: pointer;
@@ -404,64 +410,57 @@
         }
 
         .price-card.featured .price-cta {
-            background: #ffffff;
-            color: #000;
-            border-color: #ffffff;
+            background: #4faffe;
+            color: #fff;
         }
 
         .price-cta:hover {
-            border-color: rgba(255, 255, 255, 0.8);
-            background: rgba(255, 255, 255, 0.08);
+            background: #e5e5e5;
         }
 
         .price-card.featured .price-cta:hover {
-            background: #f0f0f0;
-            border-color: #f0f0f0;
+            background: #3b94e8;
         }
 
         /* Footer */
         footer {
-            background: rgba(255, 255, 255, 0.01);
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-            padding: 3rem 2.5rem;
+            background: #f9f9f9;
+            border-top: 1px solid #e5e5e5;
+            padding: 3rem;
             text-align: center;
             color: #666;
         }
 
         .footer-content {
-            max-width: 1400px;
+            max-width: 1300px;
             margin: 0 auto;
         }
 
         .footer-links {
             display: flex;
-            gap: 2rem;
+            gap: 2.5rem;
             justify-content: center;
             margin-bottom: 2rem;
             flex-wrap: wrap;
         }
 
         .footer-links a {
-            color: #888;
+            color: #666;
             text-decoration: none;
             font-size: 0.9rem;
             transition: color 0.3s;
         }
 
         .footer-links a:hover {
-            color: #fff;
+            color: #000;
         }
 
         .footer-divider {
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            border-top: 1px solid #e5e5e5;
             padding-top: 2rem;
             margin-top: 2rem;
-        }
-
-        .footer-made {
-            color: #666;
             font-size: 0.85rem;
-            letter-spacing: 1px;
+            color: #999;
         }
 
         /* Animations */
@@ -491,9 +490,9 @@
         /* Mobile Responsive */
         @media (max-width: 768px) {
             nav {
+                padding: 1rem;
                 flex-direction: column;
                 gap: 1rem;
-                padding: 1rem;
             }
 
             nav ul {
@@ -504,12 +503,12 @@
 
             .hero {
                 margin-top: 200px;
+                padding: 2rem;
                 min-height: auto;
-                padding: 2rem 1.5rem;
             }
 
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 2.8rem;
             }
 
             .hero-subtitle {
@@ -525,19 +524,19 @@
             }
 
             .section-title {
-                font-size: 1.8rem;
+                font-size: 2rem;
             }
 
             .price-card.featured {
                 transform: scale(1);
             }
 
-            .features {
+            .features, .pricing {
                 padding: 4rem 1.5rem;
             }
 
-            .pricing {
-                padding: 4rem 1.5rem;
+            nav ul {
+                display: none;
             }
         }
     </style>
@@ -545,25 +544,22 @@
 <body>
     <!-- Navigation -->
     <nav>
-        <div>
-            <div class="logo">HellCrop</div>
-            <span class="logo-sub">By HellScale</span>
-        </div>
+        <div class="logo">HellCrop</div>
         <ul>
             <li><a href="#features">Features</a></li>
             <li><a href="#pricing">Pricing</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
-        <button class="cta-nav">Get Started</button>
+        <button class="cta-nav">Start Now</button>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <p class="company-label">Next Generation Scaling</p>
-            <h1>Scale Your Business<br><strong>Without Limits</strong></h1>
-            <p class="hero-subtitle">We are Corp. We are Crop. Harvest the full potential of your operations.</p>
-            <p class="hero-desc">Enterprise-grade infrastructure that grows with you. From startup to scale, handle millions of transactions seamlessly.</p>
+            <p class="hero-tag">Scale Your Business</p>
+            <h1>Grow Without Limits</h1>
+            <p class="hero-subtitle">Enterprise-grade infrastructure. Built for ambition.</p>
+            <p class="hero-desc">We are Crop. We are Corp. Transform how you scale. From startup to unicorn, we've got the tools to help you succeed.</p>
             <div class="cta-buttons">
                 <button class="btn-primary">Start Free Trial</button>
                 <button class="btn-secondary">View Demo</button>
@@ -573,22 +569,25 @@
 
     <!-- Features Section -->
     <section class="features" id="features">
-        <h2 class="section-title">Why Choose HellScale</h2>
-        <div class="features-grid">
-            <div class="feature-card">
-                <span class="feature-icon">⚙️</span>
-                <h3>Built for Performance</h3>
-                <p>Handle peak loads effortlessly. Our infrastructure scales automatically, ensuring your app stays fast no matter the traffic.</p>
-            </div>
-            <div class="feature-card">
-                <span class="feature-icon">🔒</span>
-                <h3>Enterprise Security</h3>
-                <p>Your data is protected with industry-leading security standards. SOC 2, GDPR compliant, and encrypted end-to-end.</p>
-            </div>
-            <div class="feature-card">
-                <span class="feature-icon">📊</span>
-                <h3>Real-Time Analytics</h3>
-                <p>Monitor everything that matters. Get actionable insights instantly with comprehensive dashboards and reporting.</p>
+        <div class="features-container">
+            <h2 class="section-title">Powerful Features</h2>
+            <p class="section-subtitle">Everything you need to scale your business successfully</p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <span class="feature-icon">⚡</span>
+                    <h3>Lightning Fast</h3>
+                    <p>Built for speed. Our platform handles millions of transactions with sub-100ms latency. Never worry about performance again.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">🔒</span>
+                    <h3>Bank-Grade Security</h3>
+                    <p>Enterprise security standards. SSL encryption, SOC 2 Type II compliant, and GDPR ready. Your data is protected.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">📊</span>
+                    <h3>Advanced Analytics</h3>
+                    <p>Real-time dashboards and insights. Track what matters, make data-driven decisions, grow faster.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -597,69 +596,71 @@
     <section class="stats">
         <div class="stats-container">
             <div class="stat">
-                <div class="stat-number">150K+</div>
+                <div class="stat-number">200K+</div>
                 <div class="stat-label">Active Users</div>
             </div>
             <div class="stat">
                 <div class="stat-number">99.99%</div>
-                <div class="stat-label">Uptime SLA</div>
+                <div class="stat-label">Uptime</div>
             </div>
             <div class="stat">
-                <div class="stat-number">2B+</div>
-                <div class="stat-label">Daily Transactions</div>
+                <div class="stat-number">10B+</div>
+                <div class="stat-label">Daily Operations</div>
             </div>
             <div class="stat">
                 <div class="stat-number">50ms</div>
-                <div class="stat-label">Average Response</div>
+                <div class="stat-label">Response Time</div>
             </div>
         </div>
     </section>
 
     <!-- Pricing Section -->
     <section class="pricing" id="pricing">
-        <h2 class="section-title">Simple, Transparent Pricing</h2>
         <div class="pricing-container">
-            <div class="price-card">
-                <div class="price-badge">Starter</div>
-                <h3>Starter</h3>
-                <div class="price">$49</div>
-                <div class="price-period">per month, billed annually</div>
-                <ul class="price-features">
-                    <li>Up to 1M requests/month</li>
-                    <li>Basic analytics dashboard</li>
-                    <li>Email support</li>
-                    <li>2 team members</li>
-                    <li>99.9% uptime SLA</li>
-                </ul>
-                <button class="price-cta">Get Started</button>
+            <div class="pricing-header">
+                <h2 class="section-title">Simple Pricing</h2>
+                <p class="section-subtitle">Pay only for what you use. Scale as you grow.</p>
             </div>
-            <div class="price-card featured">
-                <div class="price-badge">Popular</div>
-                <h3>Professional</h3>
-                <div class="price">$199</div>
-                <div class="price-period">per month, billed annually</div>
-                <ul class="price-features">
-                    <li>Up to 50M requests/month</li>
-                    <li>Advanced analytics & alerts</li>
-                    <li>Priority support (24/7)</li>
-                    <li>Unlimited team members</li>
-                    <li>99.99% uptime SLA</li>
-                </ul>
-                <button class="price-cta">Get Started</button>
-            </div>
-            <div class="price-card">
-                <div class="price-badge">Enterprise</div>
-                <h3>Enterprise</h3>
-                <div class="price">Custom</div>
-                <div class="price-period">tailored to your needs</div>
-                <ul class="price-features">
-                    <li>Unlimited requests</li>
-                    <li>Custom integrations</li>
-                    <li>Dedicated account manager</li>
-                    <li>Custom SLA</li>
-                    <li>On-premise deployment</li>
-                </ul>
-                <button class="price-cta">Contact Sales</button>
+            <div class="pricing-grid">
+                <div class="price-card">
+                    <div class="price-badge">Starter</div>
+                    <h3>Starter</h3>
+                    <div class="price">$49</div>
+                    <div class="price-period">per month</div>
+                    <ul class="price-features">
+                        <li>Up to 1M transactions</li>
+                        <li>Basic analytics</li>
+                        <li>Email support</li>
+                        <li>2 team members</li>
+                    </ul>
+                    <button class="price-cta">Get Started</button>
+                </div>
+                <div class="price-card featured">
+                    <div class="price-badge">Popular</div>
+                    <h3>Professional</h3>
+                    <div class="price">$199</div>
+                    <div class="price-period">per month</div>
+                    <ul class="price-features">
+                        <li>Up to 100M transactions</li>
+                        <li>Advanced analytics</li>
+                        <li>24/7 Priority support</li>
+                        <li>Unlimited team members</li>
+                    </ul>
+                    <button class="price-cta">Get Started</button>
+                </div>
+                <div class="price-card">
+                    <div class="price-badge">Enterprise</div>
+                    <h3>Enterprise</h3>
+                    <div class="price">Custom</div>
+                    <div class="price-period">tailored plan</div>
+                    <ul class="price-features">
+                        <li>Unlimited transactions</li>
+                        <li>Custom features</li>
+                        <li>Dedicated support</li>
+                        <li>SLA guarantee</li>
+                    </ul>
+                    <button class="price-cta">Contact Us</button>
+                </div>
             </div>
         </div>
     </section>
@@ -668,14 +669,15 @@
     <footer id="contact">
         <div class="footer-content">
             <div class="footer-links">
-                <a href="#">Documentation</a>
-                <a href="#">API Reference</a>
+                <a href="#">Docs</a>
+                <a href="#">API</a>
                 <a href="#">Status</a>
                 <a href="#">Privacy</a>
                 <a href="#">Terms</a>
+                <a href="#">Support</a>
             </div>
             <div class="footer-divider">
-                <p class="footer-made">© 2024 HellCrop. Made with intent.</p>
+                <p>© 2024 HellCrop. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -683,7 +685,7 @@
     <script>
         document.querySelectorAll('.price-cta, .btn-primary').forEach(btn => {
             btn.addEventListener('click', function() {
-                alert('Dashboard coming soon on Vercel');
+                alert('Dashboard coming soon on Vercel with full authentication');
             });
         });
     </script>
