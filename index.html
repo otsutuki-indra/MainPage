@@ -7,7 +7,7 @@
     <style>
         :root {
             --primary-green: #2a5f2a;
-            --glass-bg: rgba(20, 20, 20, 0.6);
+            --glass-bg: rgba(20, 20, 20, 0.75);
             --border: rgba(255, 255, 255, 0.1);
         }
 
@@ -28,67 +28,61 @@
         /* Fast Moving Bubbles */
         .bg-animation { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
         .bubble {
-            position: absolute;
-            border-radius: 50%;
+            position: absolute; border-radius: 50%;
             background: radial-gradient(circle, var(--primary-green), transparent);
-            opacity: 0.3;
-            filter: blur(50px);
+            opacity: 0.35; filter: blur(45px);
             animation: moveFast 4s infinite alternate ease-in-out;
         }
-        .b1 { width: 400px; height: 400px; top: 10%; left: -5%; }
-        .b2 { width: 350px; height: 350px; bottom: 5%; right: -5%; animation-duration: 3s; }
+        .b1 { width: 450px; height: 450px; top: -5%; left: -10%; }
+        .b2 { width: 380px; height: 380px; bottom: 5%; right: -8%; animation-duration: 3s; }
+
         @keyframes moveFast {
             from { transform: translate(0, 0) scale(1); }
-            to { transform: translate(150px, 120px) scale(1.3); }
+            to { transform: translate(160px, 110px) scale(1.25); }
         }
 
-        /* Glass Nav Bar */
+        /* Nav */
         nav {
-            position: fixed; top: 0; width: 100%;
-            padding: 1.2rem 3rem;
+            position: fixed; top: 0; width: 100%; padding: 1.2rem 3rem;
             display: flex; justify-content: space-between; align-items: center;
-            background: rgba(15, 15, 15, 0.7);
-            backdrop-filter: blur(25px);
-            border-bottom: 1px solid var(--border);
-            z-index: 1000;
+            background: rgba(15, 15, 15, 0.7); backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border); z-index: 1000;
         }
         .logo { font-size: 1.8rem; font-weight: 900; color: #fff; }
         nav ul { display: flex; gap: 25px; list-style: none; }
-        nav a { color: #aaa; text-decoration: none; font-weight: 500; transition: 0.3s; }
+        nav a { color: #aaa; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
         nav a:hover { color: #fff; text-shadow: 0 0 10px var(--primary-green); }
 
-        /* Sections Styling */
+        /* Sections */
         section {
-            min-height: 100vh;
-            padding: 100px 10%;
+            min-height: 100vh; padding: 120px 10%;
             display: flex; flex-direction: column; justify-content: center;
             position: relative; z-index: 10;
         }
 
         .glass-card {
-            background: var(--glass-bg);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 3rem;
-            transition: 0.4s;
+            background: var(--glass-bg); backdrop-filter: blur(25px);
+            border: 1px solid var(--border); border-radius: 24px;
+            padding: 3.5rem; transition: 0.5s;
         }
-        .glass-card:hover { border-color: var(--primary-green); box-shadow: 0 0 30px rgba(42, 95, 42, 0.2); }
+        .glass-card:hover { border-color: var(--primary-green); box-shadow: 0 0 40px rgba(42, 95, 42, 0.25); }
 
-        h2 { font-size: 3rem; margin-bottom: 2rem; color: #fff; }
+        h2 { font-size: 3.2rem; margin-bottom: 1.5rem; color: #fff; }
+        
+        .btn-action {
+            display: inline-block; margin-top: 25px;
+            background: var(--primary-green); color: white;
+            padding: 12px 35px; border: none; border-radius: 8px;
+            font-weight: 700; text-decoration: none; cursor: pointer; transition: 0.3s;
+        }
+        .btn-action:hover { transform: translateY(-3px); box-shadow: 0 0 20px var(--primary-green); }
 
-        /* Footer based on lik.png */
+        /* Footer */
         footer {
-            background: rgba(0, 0, 0, 0.9);
-            padding: 2rem;
-            text-align: center;
-            font-size: 0.85rem;
-            color: #666;
+            background: rgba(5, 5, 5, 0.95); padding: 2.5rem;
+            text-align: center; font-size: 0.85rem; color: #555;
             border-top: 1px solid var(--border);
         }
-        .footer-links a { color: #888; text-decoration: none; margin: 0 10px; }
-        .footer-links a:hover { color: #fff; }
-
     </style>
 </head>
 <body>
@@ -101,63 +95,54 @@
     <nav>
         <div class="logo">ᎻᎬᏞᏞᏟᎡᎾᏢ</div>
         <ul>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#calendar">Calendar</a></li>
-            <li><a href="#tool">Tool</a></li>
-            <li><a href="#info">Info</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#features">FEATURES</a></li>
+            <li><a href="#tool">TOOL</a></li>
+            <li><a href="#info">INFO</a></li>
+            <li><a href="#contact">CONTACT</a></li>
         </ul>
     </nav>
 
     <section id="hero">
-        <h1>Grow Without Limits</h1>
-        <p>Advanced digital solutions with geometric precision.</p>
+        <h1 style="font-size: 5.5rem; font-weight: 900; background: linear-gradient(to right, #fff, var(--primary-green)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">GROW WITHOUT LIMITS</h1>
+        <p>Advanced digital infrastructure for modern scale.</p>
     </section>
 
     <section id="features">
         <div class="glass-card">
             <h2>Features</h2>
-            <p>আমাদের আধুনিক ডার্ক গ্রিন থিমে আপনার বিজনেসের সব ফিচার থাকবে এখানে।</p>
-        </div>
-    </section>
-
-    <section id="calendar">
-        <div class="glass-card">
-            <h2>Calendar</h2>
-            <div style="height: 200px; border: 1px dashed #333; display: flex; align-items: center; justify-content: center;">
-                April 2026 Schedule View
-            </div>
+            <p>High-performance nodes, secure data management, and lightning-fast deployment speeds.</p>
         </div>
     </section>
 
     <section id="tool">
         <div class="glass-card">
-            <h2>Tool</h2>
-            <p>আপনার প্রোজেক্ট ম্যানেজমেন্টের প্রয়োজনীয় টুলস সেকশন।</p>
+            <h2>Tool Panel</h2>
+            <p>Access our specialized analytical tools to optimize your growth metrics.</p>
+            <a href="tool.html" class="btn-action">OPEN TOOL INTERFACE</a>
         </div>
     </section>
 
     <section id="info">
         <div class="glass-card">
             <h2>Info</h2>
-            <p>HellCrop সম্পর্কে বিস্তারিত তথ্য।</p>
+            <p>HellCrop provides aesthetic and high-performance digital solutions globally.</p>
         </div>
     </section>
 
     <section id="contact">
         <div class="glass-card">
             <h2>Contact</h2>
-            <p>আমাদের সাথে যোগাযোগ করার মাধ্যম।</p>
+            <p>Get in touch with our technical support team for 24/7 assistance.</p>
+            <a href="mailto:support@hellcrop.com" class="btn-action">GET IN TOUCH</a>
         </div>
     </section>
 
     <footer>
-        <div class="footer-links">
+        <div style="display: flex; justify-content: center; align-items: center; gap: 12px;">
             <span>© 2026 HellCrop. All rights reserved.</span> | 
-            <a href="#hero">Home</a> | 
-            <a href="#">Terms of Use</a> | 
-            <a href="signin.html">Sign In</a> 
-            <span style="margin-left:20px;">𝕏 ▶ 📷</span>
+            <a href="#hero" style="color:#777; text-decoration:none;">Home</a> | 
+            <a href="#" style="color:#777; text-decoration:none;">Terms</a>
+            <div style="border-left: 1px solid #333; padding-left: 15px; margin-left: 10px; color: #fff;">𝕏 ▶ 📷</div>
         </div>
     </footer>
 
