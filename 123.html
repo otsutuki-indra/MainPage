@@ -352,6 +352,7 @@
     text-shadow: 0 0 40px var(--glow);
   }
 
+  /* LOW GLITCH - DEFAULT */
   .glitch {
     position: relative;
   }
@@ -388,6 +389,106 @@
     0%,100% { opacity:0; transform: translateX(3px); }
     92%,95% { opacity:0; }
     93%,94% { opacity:0.8; transform: translateX(6px) skewX(5deg); }
+  }
+
+  /* HIGH INTENSITY GLITCH - ONLY FOR MAIN TITLE */
+  .glitch.intense {
+    position: relative;
+    animation: intensePulse 2s ease-in-out infinite;
+  }
+
+  .glitch.intense::before, .glitch.intense::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+    font-weight: 900;
+  }
+
+  .glitch.intense::before {
+    color: #FF0066;
+    z-index: -1;
+    animation: intenseGlitch1 0.8s ease-in-out infinite;
+    text-shadow: 0 0 10px #FF0066, 0 0 20px rgba(255,0,102,0.8);
+    clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+  }
+
+  .glitch.intense::after {
+    color: #00FFFF;
+    z-index: -2;
+    animation: intenseGlitch2 0.8s ease-in-out infinite;
+    text-shadow: 0 0 10px #00FFFF, 0 0 20px rgba(0,255,255,0.8);
+    clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
+  }
+
+  @keyframes intenseGlitch1 {
+    0% { 
+      transform: translateX(-8px) skewX(-15deg) scaleX(0.95);
+      opacity: 0.8;
+      text-shadow: -2px 0 #FF0066, 2px 0 #00FFFF, 0 0 20px rgba(255,0,34,0.8);
+    }
+    25% {
+      transform: translateX(4px) skewX(8deg) scaleX(1);
+      opacity: 0.6;
+      text-shadow: 3px 0 #FF0066, -3px 0 #00FFFF, 0 0 30px rgba(255,0,34,1);
+    }
+    50% {
+      transform: translateX(-12px) skewX(-20deg) scaleX(0.9);
+      opacity: 0.9;
+      text-shadow: -4px 0 #FF0066, 4px 0 #00FFFF, 0 0 25px rgba(255,0,34,0.9);
+    }
+    75% {
+      transform: translateX(6px) skewX(10deg) scaleX(1.05);
+      opacity: 0.7;
+      text-shadow: 2px 0 #FF0066, -2px 0 #00FFFF, 0 0 35px rgba(255,0,34,1);
+    }
+    100% { 
+      transform: translateX(-8px) skewX(-15deg) scaleX(0.95);
+      opacity: 0.8;
+      text-shadow: -2px 0 #FF0066, 2px 0 #00FFFF, 0 0 20px rgba(255,0,34,0.8);
+    }
+  }
+
+  @keyframes intenseGlitch2 {
+    0% { 
+      transform: translateX(8px) skewX(15deg) scaleX(0.95);
+      opacity: 0.8;
+      text-shadow: 2px 0 #00FFFF, -2px 0 #FF0066, 0 0 20px rgba(0,255,255,0.8);
+    }
+    25% {
+      transform: translateX(-4px) skewX(-8deg) scaleX(1);
+      opacity: 0.6;
+      text-shadow: -3px 0 #00FFFF, 3px 0 #FF0066, 0 0 30px rgba(0,255,255,1);
+    }
+    50% {
+      transform: translateX(12px) skewX(20deg) scaleX(0.9);
+      opacity: 0.9;
+      text-shadow: 4px 0 #00FFFF, -4px 0 #FF0066, 0 0 25px rgba(0,255,255,0.9);
+    }
+    75% {
+      transform: translateX(-6px) skewX(-10deg) scaleX(1.05);
+      opacity: 0.7;
+      text-shadow: -2px 0 #00FFFF, 2px 0 #FF0066, 0 0 35px rgba(0,255,255,1);
+    }
+    100% { 
+      transform: translateX(8px) skewX(15deg) scaleX(0.95);
+      opacity: 0.8;
+      text-shadow: 2px 0 #00FFFF, -2px 0 #FF0066, 0 0 20px rgba(0,255,255,0.8);
+    }
+  }
+
+  @keyframes intensePulse {
+    0%, 100% {
+      text-shadow: 0 0 40px var(--glow), 0 0 80px rgba(255,0,34,0.5);
+    }
+    50% {
+      text-shadow: 0 0 60px var(--glow), 0 0 120px rgba(255,0,34,0.8);
+    }
   }
 
   .hero-sub {
@@ -1330,7 +1431,7 @@
       <div class="hero-tag">// EST. 2019 — DIGITAL WARFARE DIVISION</div>
       <h1 class="hero-title">
         <span class="glitch" data-text="WE BUILD">WE BUILD</span><br>
-        <span class="red glitch" data-text="WHAT OTHERS">WHAT OTHERS</span><br>
+        <span class="red glitch intense" data-text="WHAT OTHERS">WHAT OTHERS</span><br>
         <span class="glitch" data-text="FEAR">FEAR</span>
       </h1>
       <p class="hero-sub">Hellcorp engineers the impossible. Bleeding-edge tech solutions forged in the fires of innovation — for brands that refuse to be ordinary.</p>
