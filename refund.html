@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Refund Policy — Hellcorp</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Share+Tech+Mono&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--hell-red:#FF0022;--ash:#1A1A1A;--void:#0A0A0A;--white:#F0EDE8;--dim:#888;--glow:rgba(255,0,34,0.6)}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{background:var(--void);color:var(--white);font-family:'Rajdhani',sans-serif;cursor:none;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:9000;opacity:.35}
+body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.08) 2px,rgba(0,0,0,.08) 4px);pointer-events:none;z-index:9001}
+.cursor{position:fixed;width:12px;height:12px;background:var(--hell-red);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform .1s;box-shadow:0 0 20px var(--glow),0 0 40px var(--glow)}
+.cursor-ring{position:fixed;width:36px;height:36px;border:1px solid rgba(255,0,34,.5);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:all .15s ease}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;justify-content:space-between;align-items:center;padding:20px 60px;border-bottom:1px solid rgba(255,0,34,.15);background:rgba(10,10,10,.85);backdrop-filter:blur(10px)}
+.logo{font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:.15em;color:var(--hell-red);text-shadow:0 0 30px var(--glow);animation:flicker 4s infinite;text-decoration:none}
+.logo span{color:var(--white)}
+@keyframes flicker{0%,95%,100%{opacity:1}96%{opacity:.8}97%{opacity:1}98%{opacity:.6}99%{opacity:1}}
+.nav-links{display:flex;gap:40px;list-style:none}
+.nav-links a{font-family:'Share Tech Mono',monospace;font-size:.75rem;letter-spacing:.2em;color:var(--dim);text-decoration:none;text-transform:uppercase;transition:color .3s,text-shadow .3s;position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--hell-red);transition:width .3s}
+.nav-links a:hover{color:var(--hell-red);text-shadow:0 0 15px var(--glow)}
+.nav-links a:hover::after{width:100%}
+.nav-btn{font-family:'Share Tech Mono',monospace;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;border:1px solid var(--hell-red);color:var(--hell-red);background:0 0;padding:10px 24px;cursor:none;transition:all .3s;position:relative;overflow:hidden}
+.nav-btn::before{content:'';position:absolute;inset:0;background:var(--hell-red);transform:scaleX(0);transform-origin:left;transition:transform .3s;z-index:-1}
+.nav-btn:hover{color:var(--void)}.nav-btn:hover::before{transform:scaleX(1)}
+.legal-hero{padding:160px 60px 60px;position:relative;border-bottom:1px solid rgba(255,0,34,.1)}
+.legal-hero::before{content:'';position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(255,0,34,.08) 0%,transparent 70%);top:20%;right:-100px;pointer-events:none}
+.legal-breadcrumb{font-family:'Share Tech Mono',monospace;font-size:.6rem;letter-spacing:.3em;color:var(--dim);text-transform:uppercase;margin-bottom:16px}
+.legal-breadcrumb a{color:var(--hell-red);text-decoration:none}.legal-breadcrumb a:hover{text-decoration:underline}
+.legal-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,7vw,6rem);line-height:1;letter-spacing:.03em;margin-bottom:16px}
+.legal-meta{font-family:'Share Tech Mono',monospace;font-size:.65rem;letter-spacing:.2em;color:var(--dim);display:flex;gap:30px;flex-wrap:wrap}
+.legal-meta span{color:var(--hell-red)}
+.legal-body{max-width:860px;margin:0 auto;padding:80px 60px 120px}
+.legal-body h2{font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:.05em;color:var(--white);margin-top:56px;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid rgba(255,0,34,.15);display:flex;align-items:center;gap:14px}
+.legal-body h2 .sec-num{font-family:'Share Tech Mono',monospace;font-size:.7rem;color:var(--hell-red);letter-spacing:.2em;opacity:.7}
+.legal-body h3{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:.05em;color:var(--white);margin-top:36px;margin-bottom:12px}
+.legal-body p{font-size:1rem;font-weight:300;color:rgba(240,237,232,.7);line-height:1.9;margin-bottom:16px}
+.legal-body ul{margin:12px 0 20px 24px;list-style:none}
+.legal-body ul li{font-size:1rem;font-weight:300;color:rgba(240,237,232,.7);line-height:1.9;position:relative;padding-left:20px;margin-bottom:6px}
+.legal-body ul li::before{content:'';position:absolute;left:0;top:12px;width:6px;height:1px;background:var(--hell-red)}
+.legal-body strong{color:var(--white);font-weight:600}
+.hb{background:rgba(255,0,34,.04);border-left:3px solid var(--hell-red);padding:20px 24px;margin:24px 0}
+.hb p{margin-bottom:0}
+.legal-body table{width:100%;border-collapse:collapse;margin:20px 0}
+.legal-body table th{font-family:'Share Tech Mono',monospace;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--hell-red);text-align:left;padding:12px 16px;border-bottom:1px solid rgba(255,0,34,.3);background:rgba(255,0,34,.03)}
+.legal-body table td{font-size:.95rem;font-weight:300;color:rgba(240,237,232,.7);padding:12px 16px;border-bottom:1px solid rgba(255,0,34,.08);line-height:1.7}
+.jtabs{display:flex;gap:2px;margin-bottom:40px;border-bottom:1px solid rgba(255,0,34,.15)}
+.jtabs button{font-family:'Share Tech Mono',monospace;font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;background:0 0;color:var(--dim);border:none;padding:14px 24px;cursor:none;transition:all .3s;position:relative}
+.jtabs button::after{content:'';position:absolute;bottom:-1px;left:0;right:0;height:2px;background:var(--hell-red);transform:scaleX(0);transition:transform .3s}
+.jtabs button.active{color:var(--hell-red)}.jtabs button.active::after{transform:scaleX(1)}
+.jtabs button:hover{color:var(--white)}
+.jc{display:none}.jc.active{display:block}
+.ra{display:inline-block;width:60px;height:3px;background:var(--hell-red);margin-bottom:24px;position:relative;overflow:hidden}
+.ra::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,transparent,#fff,transparent);animation:shine 2s infinite}
+@keyframes shine{from{transform:translateX(-100%)}to{transform:translateX(100%)}}
+footer{background:var(--void);border-top:1px solid rgba(255,0,34,.1);padding:40px 60px;display:flex;justify-content:space-between;align-items:center}
+.flogo{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;letter-spacing:.1em;color:var(--hell-red);text-shadow:0 0 20px var(--glow)}
+.fcopy{font-family:'Share Tech Mono',monospace;font-size:.6rem;letter-spacing:.2em;color:var(--dim)}
+.flinks{display:flex;gap:20px}
+.flinks a{font-family:'Share Tech Mono',monospace;font-size:.65rem;letter-spacing:.15em;color:var(--dim);text-decoration:none;text-transform:uppercase;transition:color .3s;cursor:none}
+.flinks a:hover{color:var(--hell-red)}
+@media(max-width:768px){nav{padding:16px 24px}.nav-links{display:none}.legal-hero{padding:140px 24px 40px}.legal-body{padding:40px 24px 80px}.legal-meta{gap:16px}footer{flex-direction:column;gap:16px;text-align:center;padding:30px 24px}}
+</style>
+</head>
+<body>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+<nav>
+<a href="index.html" class="logo">HELL<span>CORP</span></a>
+<ul class="nav-links">
+<li><a href="index.html#services">Services</a></li>
+<li><a href="index.html#about">About</a></li>
+<li><a href="index.html#work">Work</a></li>
+<li><a href="index.html#process">Process</a></li>
+</ul>
+<button class="nav-btn" onclick="window.location.href='index.html#contact'">IGNITE PROJECT</button>
+</nav>
+<div class="legal-hero">
+<div class="legal-breadcrumb"><a href="index.html">Hellcorp</a> // Legal // Refund Policy</div>
+<h1 class="legal-title">REFUND <span style="color:var(--hell-red)">POLICY</span></h1>
+<div class="ra"></div>
+<div class="legal-meta">
+<div>EFFECTIVE: <span>JAN 1, 2025</span></div>
+<div>UPDATED: <span>JUN 15, 2025</span></div>
+<div>VERSION: <span>2.0.0</span></div>
+</div>
+</div>
+<div class="legal-body">
+<div class="jtabs">
+<button class="active" onclick="sw('us',this)">United States</button>
+<button onclick="sw('eu',this)">European Union</button>
+<button onclick="sw('gl',this)">Global</button>
+</div>
+
+<div class="jc active" id="jur-us">
+<div class="hb"><p><strong>Overview.</strong> Hellcorp Inc. provides professional services that are custom-built for each engagement. Due to the bespoke nature of our work, refunds are handled differently than standard retail purchases. This policy explains when refunds are available, how they are calculated, and the process for requesting one. This policy is governed by US federal and state law.</p></div>
+
+<h2><span class="sec-num">01</span> REFUND ELIGIBILITY BY SERVICE TYPE</h2>
+<table>
+<thead><tr><th>Service Type</th><th>Refund Eligibility</th><th>Conditions</th></tr></thead>
+<tbody>
+<tr><td>Custom Development (Fixed Price)</td><td>Partial refund possible</td><td>Before work commences: 90% refund (10% admin fee). After commencement but before 50% milestone: pro-rata refund for uncompleted work minus 15% reallocation fee. After 50% milestone: no refund — dispute resolution per Terms of Use.</td></tr>
+<tr><td>Custom Development (T&M)</td><td>Disputed hours only</td><td>Refunds limited to hours that are demonstrably: (a) not authorized per SOW; (b) duplicated; (c) spent on out-of-scope work without change order approval. Requires documented evidence. Standard hourly disputes must be raised within 14 days of invoice date.</td></tr>
+<tr><td>Retainer Agreements</td><td>Unused retainer balance</td><td>Unused retainer balance refundable within 30 days of termination notice, minus any non-refundable minimums specified in the retainer agreement. Partially used months are not prorated unless termination is for cause by Hellcorp.</td></tr>
+<tr><td>Security Audits & Pentests</td><td>Full refund before scope start</td><td>Before engagement begins: full refund minus 5% admin fee. After engagement begins: no refund — deliverables (reports, findings) will be provided per SOW regardless of findings severity.</td></tr>
+<tr><td>Consulting / Advisory</td><td>Session-level</td><td>Individual sessions cancelled 48+ hours in advance: full refund or reschedule. Under 48 hours: 50% refund. No-show: no refund. Package sessions: pro-rata refund for unused sessions within 14 days of cancellation.</td></tr>
+<tr><td>Product Design / UX</td><td>Milestone-based</td><td>Before any deliverables produced: 85% refund. After wireframe stage: no refund — design files transferred to Client.</td></tr>
+<tr><td>AI/ML Model Development</td><td>Before training</td><td>Before model training begins: 80% refund (20% covers data preparation costs). After training begins: no refund — compute resources are non-recoverable. Client receives trained model regardless of performance metrics (performance targets are best-effort unless guaranteed in SOW).</td></tr>
+<tr><td>Cloud Infrastructure Setup</td><td>Before provisioning</td><td>Before cloud resources provisioned: full refund minus 5%. After provisioning: no refund for setup fees; Client is responsible for ongoing cloud provider charges directly to the provider.</td></tr>
+<tr><td>Blockchain / Smart Contracts</td><td>Before deployment</td><td>Before mainnet deployment: 75% refund (25% for audit, gas, development environment costs). After deployment: no refund — deployed contracts are immutable.</td></tr>
+</tbody>
+</table>
+
+<h2><span class="sec-num">02</span> NON-REFUNDABLE ITEMS</h2>
+<ul>
+<li><strong>Third-party costs</strong> — licenses, APIs, cloud hosting, domain registrations, SSL certificates, or any costs paid directly to third-party providers.</li>
+<li><strong>Expedited/rush fees</strong> — premium charges for accelerated timelines are non-refundable once work begins.</li>
+<li><strong>Travel and on-site expenses</strong> — flights, hotels, per diem, and related costs for on-site engagements.</li>
+<li><strong>Subcontractor costs</strong> — fees paid to engaged specialists or subcontractors.</li>
+<li><strong>Deposits for future phases</strong> — advance payments for project phases not yet started are refundable, but deposits designated as non-refundable in a signed SOW are not.</li>
+<li><strong>Training and workshops</strong> — once conducted, no refund. Cancellation policy per §01 above applies.</li>
+</ul>
+
+<h2><span class="sec-num">03</span> REFUND PROCESS</h2>
+<h3>3.1 Request Submission</h3>
+<ul>
+<li>Submit refund request in writing to <span style="color:var(--hell-red)">billing@hellcorp.io</span> with: project name, invoice reference, amount requested, and detailed justification.</li>
+<li>Requests must be submitted within 30 days of the triggering event (invoice date, milestone completion, or service cancellation).</li>
+<li>Late requests may be denied at Hellcorp's sole discretion.</li>
+</ul>
+<h3>3.2 Review & Assessment</h3>
+<ul>
+<li>Hellcorp acknowledges receipt within 3 business days.</li>
+<li>Assessment completed within 15 business days, which may include: review of project records, timesheets, communications, SOW terms, and delivery evidence.</li>
+<li>Hellcorp may request additional information or a clarification call.</li>
+</ul>
+<h3>3.3 Decision & Communication</h3>
+<ul>
+<li>Written decision sent via email, including: approval/denial, refund amount (if approved), calculation methodology, and payment timeline.</li>
+<li>If denied: reasons provided with reference to specific Terms of Use or SOW provisions.</li>
+</ul>
+<h3>3.4 Payment</h3>
+<ul>
+<li>Approved refunds processed within 15 business days of decision via original payment method.</li>
+<li>If original payment method unavailable, refund via wire transfer or check within 30 business days.</li>
+<li>Hellcorp does not charge refund processing fees unless the original payment was made by credit card, in which case the payment processor's refund fee (typically 2-3%) is deducted.</li>
+</ul>
+
+<h2><span class="sec-num">04</span> DISPUTE RESOLUTION</h2>
+<p>If a refund request is denied and the Client disagrees:</p>
+<ul>
+<li><strong>Escalation:</strong> Request escalation to Hellcorp's VP of Operations within 10 business days of denial. VP review within 10 business days.</li>
+<li><strong>Mediation:</strong> If escalation does not resolve the dispute, either party may request non-binding mediation. Costs split equally.</li>
+<li><strong>Arbitration:</strong> Per Terms of Use Section 13 — binding arbitration under AAA Commercial Rules in New York, NY. This is the exclusive remedy; small claims court is also available for claims within the applicable small claims limit.</li>
+</ul>
+<div class="hb"><p><strong>Important:</strong> Filing a credit card chargeback without first following this dispute resolution process may constitute a material breach of the Terms of Use and may result in immediate suspension of all services and account termination.</p></div>
+
+<h2><span class="sec-num">05</span> FORCE MAJEURE & PROJECT DISRUPTION</h2>
+<p>If a project is disrupted due to force majeure events (pandemic, natural disaster, government action, cyberattack on critical infrastructure):</p>
+<ul>
+<li>Neither party is liable for delays or non-performance during the force majeure period.</li>
+<li>Hellcorp will credit the Client for any prepaid but undelivered Services during the disruption period.</li>
+<li>If the disruption exceeds 60 consecutive days, either party may terminate without penalty. Prepaid amounts for undelivered work are refunded within 30 days minus any non-recoverable third-party costs already incurred.</li>
+</ul>
+
+<h2><span class="sec-num">06</span> CANCELLATION BY HELLCORP</h2>
+<p>If Hellcorp cancels an engagement for any reason other than Client breach:</p>
+<ul>
+<li>Full refund of all prepaid amounts for undelivered work.</li>
+<li>All completed Deliverables transferred to Client with appropriate licenses.</li>
+<li>Reasonable assistance in transitioning the project to another provider (up to 10 hours, included at no cost).</li>
+</ul>
+
+<h2><span class="sec-num">07</span> STATE-SPECIFIC PROVISIONS</h2>
+<ul>
+<li><strong>New York:</strong> Refund claims subject to New York's statute of limitations (6 years for contract claims). No "cooling-off" period applies to B2B professional services.</li>
+<li><strong>California:</strong> For California Consumer clients, the 14-day right of withdrawal under the Consumer Contracts Regulations does not apply to custom-built digital services, but the good-faith refund assessment process above applies. California Civil Code §1724 et seq. governs innkeepers/common carriers — not applicable to professional services.</li>
+<li><strong>Other States:</strong> Where state law provides a statutory right of cancellation or refund for services not yet rendered, that right supplements this policy. Where state law imposes stricter refund obligations (e.g., specific service industries), those obligations prevail.</li>
+</ul>
+<div class="hb"><p><strong>Contact (US):</strong> <span style="color:var(--hell-red)">billing@hellcorp.io</span> | Hellcorp Inc., Level 66, Hellfire Tower, New York, NY 10001</p></div>
+</div>
+
+<div class="jc" id="jur-eu">
+<div class="hb"><p><strong>EU Consumer Rights.</strong> For EU Consumers, statutory withdrawal rights under Directive 2011/83/EU apply where applicable. For B2B engagements, the refund terms below govern. Controller: Hellcorp Ireland Ltd., Dublin 4, Ireland.</p></div>
+
+<h2><span class="sec-num">01</span> CONSUMER WITHDRAWAL RIGHT (DISTANCE CONTRACTS)</h2>
+<h3>1.1 Applicability</h3>
+<p>Under Directive 2011/83/EU (implemented via national law in each member state), Consumers have a 14-day withdrawal period for distance contracts. However:</p>
+<ul>
+<li>Custom-made goods or services <strong>expressly made to the Consumer's specifications</strong> are exempt from the withdrawal right per Article 16(c) of the Directive.</li>
+<li>Hellcorp's services are, by nature, custom-made to Client specifications. The withdrawal right therefore does not apply to the core service delivery.</li>
+</ul>
+<h3>1.2 Where Withdrawal Applies</h3>
+<p>If any component of the service is not custom-made (e.g., a pre-built template, off-the-shelf software license, or non-customized workshop):</p>
+<ul>
+<li>14-day withdrawal from the day of contract conclusion (or delivery, whichever is later per national implementation).</li>
+<li>Full refund within 14 days of withdrawal receipt.</li>
+<li>If service began during withdrawal period with Consumer's express consent: proportionate amount for services actually provided.</li>
+<li>Refund via same payment method as original transaction, unless Consumer agrees otherwise.</li>
+</ul>
+
+<h2><span class="sec-num">02</span> B2B REFUND TERMS</h2>
+<p>For B2B Clients, the US refund framework (Section 01–06) applies as baseline, with the following modifications:</p>
+<table>
+<thead><tr><th>Service Type</th><th>EU-Specific Modification</th></tr></thead>
+<tbody>
+<tr><td>Custom Development</td><td>Before work: 100% refund (no admin fee — EU unfair contract terms directive prohibits disproportionate penalty clauses). After 50% milestone: pro-rata credit toward future services (in addition to dispute resolution rights).</td></tr>
+<tr><td>AI/ML Models</td><td>Before training: 90% refund (10% for demonstrable data preparation costs only — must be documented). After training: compute cost documentation required; refund of margin only, not pass-through cloud costs.</td></tr>
+<tr><td>Blockchain</td><td>Before deployment: 85% refund. Gas and audit costs must be substantiated with receipts/ledger records.</td></tr>
+<tr><td>All Services</td><td>No refund deduction may exceed Hellcorp's actual demonstrated costs. Penalty clauses deemed disproportionate under Directive 93/13/EEC are unenforceable for Consumer clients.</td></tr>
+</tbody>
+</table>
+
+<h2><span class="sec-num">03</span> DIGITAL CONTENT (DIRECTIVE 2019/770)</h2>
+<p>Where Deliverables qualify as "digital content or digital services" under the Digital Content Directive:</p>
+<ul>
+<li><strong>Conformity:</strong> Deliverables must conform to the contract, including any agreed specifications, functionality, and interoperability requirements.</li>
+<li><strong>Non-conformity remedies:</strong> If Deliverables do not conform — Client may request: (a) price reduction; or (b) termination with full refund, per the hierarchy in Article 16 of the Directive. Hellcorp has the right to cure first within a reasonable period.</li>
+<li><strong>Update obligation:</strong> Where the contract includes an update obligation, Hellcorp must provide updates for the period specified in the SOW.</li>
+<li><strong>Personal data as consideration:</strong> Where personal data is provided as consideration (counter-performance) for the digital service, the Client has additional rights including termination if Hellcorp fails to process data in accordance with the agreement.</li>
+</ul>
+
+<h2><span class="sec-num">04</span> REFUND TIMELINE (EU)</h2>
+<ul>
+<li>Assessment: 10 business days (reduced from 15 in US framework).</li>
+<li>Decision: within 5 business days of assessment completion.</li>
+<li>Payment: within 10 business days of decision (EU member states generally require faster refund processing than US).</li>
+<li>Total maximum: 25 business days from request to payment.</li>
+</ul>
+
+<h2><span class="sec-num">05</span> DISPUTE RESOLUTION (EU)</h2>
+<ul>
+<li><strong>ODR Platform:</strong> <span style="color:var(--hell-red)">https://ec.europa.eu/consumers/odr</span></li>
+<li><strong>Governing law (B2B):</strong> Ireland. Jurisdiction: Dublin courts.</li>
+<li><strong>Governing law (Consumer):</strong> Consumer's habitual residence. Jurisdiction: local courts per Brussels I bis Art. 18.</li>
+<li><strong>ADR:</strong> Hellcorp participates in ADR schemes as required under Directive 2013/11/EU and national implementing legislation.</li>
+</ul>
+<div class="hb"><p><strong>Contact (EU):</strong> <span style="color:var(--hell-red)">billing@hellcorp.io</span> | Hellcorp Ireland Ltd., 1 Grand Canal Street Upper, Dublin 4, D04 V5K8, Ireland</p></div>
+</div>
+
+<div class="jc" id="jur-gl">
+<div class="hb"><p><strong>Global Refunds.</strong> This section covers refund provisions for UK, Canada, Australia, Japan, Singapore, South Korea, Brazil, India, UAE, and other jurisdictions. US framework applies as default unless modified below or by mandatory local law.</p></div>
+
+<h2><span class="sec-num">01</span> JURISDICTION-SPECIFIC REFUND RULES</h2>
+
+<h3>United Kingdom</h3>
+<ul>
+<li>Consumer Rights Act 2015: 14-day cancellation for distance contracts. Custom-made services exempt (s.28(1)(c)).</li>
+<li>Goods: 30-day right to reject faulty goods, refund within 14 days of rejection. Not applicable to services per se.</li>
+<li>Services: right to price reduction or repeat performance for substandard services (s.50–54 CRA). Full refund if repeat performance impossible or not provided within reasonable time.</li>
+<li>Consumer Contracts (Information, Cancellation and Additional Charges) Regulations 2013: cancellation information must be provided. Failure to provide may extend the 14-day cancellation period.</li>
+<li>B2B: US framework applies with UK modification — no admin fee deductions (per unfair contract terms principles under CRA 2015 s.62).</li>
+<li>Governing law: England & Wales.</li>
+</ul>
+
+<h3>Canada</h3>
+<ul>
+<li>No federal statutory cooling-off period for B2B professional services. Provincial consumer protection legislation varies:</li>
+<li><strong>Ontario:</strong> Consumer Protection Act, 2002 — 10-day cooling-off for certain agreements (not custom services). False/misleading representations give rise to refund claims under s.18.</li>
+<li><strong>Quebec:</strong> Consumer Protection Act (R.S.Q. c. P-40.1) — contracts for services not subject to cancellation if custom-made. Three types of remedies for non-conformity: forced performance, replacement, or rescission (resiliation) with refund.</li>
+<li><strong>British Columbia:</strong> BPCPA — no specific cooling-off for professional services. Unfair practices give rise to damage claims including refund.</li>
+<li>B2B: US framework applies. No admin fee exceeding actual documented costs.</li>
+</ul>
+
+<h3>Australia</h3>
+<ul>
+<li><strong>Consumer guarantees</strong> under Australian Consumer Law (ACL): services must be provided with due care and skill, fit for specified purpose, and delivered within reasonable time. If not — Consumer may: (a) cancel and obtain full refund; (b) claim compensation for drop in value; (c) seek repair/repeat performance.</li>
+<li>No statutory cooling-off period for professional services (cooling-off applies to door-to-door and telemarketing sales per s.69 ACL).</li>
+<li>Major failure → Consumer can reject and claim refund. Minor failure → Hellcorp may remedy within reasonable time.</li>
+<li>B2B: ACL guarantees do not apply if goods/services acquired for $100,000+ (s.2A ACL threshold). Below threshold, ACL applies.</li>
+<li>ACCC enforcement: <span style="color:var(--hell-red)">accc.gov.au</span></li>
+</ul>
+
+<h3>Japan</h3>
+<ul>
+<li>Specific Commercial Transactions Act: no cooling-off for custom-made services (Art. 58 excludes custom-ordered goods).</li>
+<li>Civil Code (Amended 2020): contract termination for breach with refund of consideration (Art. 541–543). Right to demand performance, compensation, or cancellation.</li>
+<li>Consumer Contract Act: clauses that unreasonably disadvantage Consumers are void (Art. 10). Disproportionate cancellation fees likely void.</li>
+<li>B2B: US framework applies. Refund deductions must reflect actual costs; penalty-like deductions may be void under general contract principles.</li>
+</ul>
+
+<h3>Singapore</h3>
+<ul>
+<li>Consumer Protection (Fair Trading) Act (CPFTA): no cooling-off for professional services specifically. Consumers may claim for unfair practices (misrepresentation, false claims, etc.) via Small Claims Tribunal or court.</li>
+<li>Common law: breach of contract gives right to damages. Where breach is repudiatory, innocent party may terminate and claim refund of prepaid amounts.</li>
+<li>B2B: US framework applies. No deduction exceeding actual documented costs.</li>
+</ul>
+
+<h3>South Korea</h3>
+<ul>
+<li>Act on Consumer Protection in Electronic Commerce, etc.: 7-day cooling-off for online purchases (Art. 17). Exempt: custom-made goods/services per Art. 17(5).</li>
+<li>Framework Act on Consumers: right to seek dispute resolution via Korea Consumer Agency (KCA) or local consumer centers.</li>
+<li>Civil Act: breach → termination (Art. 543) with restitution. Refund of consideration for unperformed portion.</li>
+<li>B2B: US framework applies. Korean courts may reduce or void penalty-like cancellation fees per general equity principles.</li>
+</ul>
+
+<h3>Brazil</h3>
+<ul>
+<li><strong>CDC (Consumer Defense Code, Law 8.078/1990):</strong> 7-day反思期 (cooling-off) for off-premises/online sales (Art. 49). Custom-made services may be exempt if the Consumer specifically requested customization (Art. 49, sole paragraph interpretation by case law).</li>
+<li>Non-conformity: Consumer may demand: (a) re-performance; (b) price reduction; (c) contract rescission with refund (Art. 20). Rescission with refund is the Consumer's choice, not the provider's.</li>
+<li>Administrative sanctions by ANPD/PROCON for refusing legitimate refund claims.</li>
+<li>B2B: Civil Code provisions govern. US framework applies with limitation: no cancellation fee exceeding actual demonstrable costs.</li>
+</ul>
+
+<h3>India</h3>
+<ul>
+<li>Consumer Protection Act, 2019: product liability for deficient services (Ch. VI). Consumer can file complaint with District/State/National Consumer Disputes Redressal Commission for refund.</li>
+<li>No statutory cooling-off for B2B professional services. B2C e-commerce rules (Consumer Protection (E-Commerce) Rules, 2020) provide for cancellation where applicable — custom services exempt.</li>
+<li>B2B: US framework applies. Indian Contract Act, 1872: breach gives right to damages and restitution. Cancellation fees that are punitive (not genuine pre-estimate of loss) may be struck down as penalty clauses per Section 74.</li>
+</ul>
+
+<h3>United Arab Emirates</h3>
+<ul>
+<li><strong>Federal Consumer Protection Law No. 15/2020:</strong> Consumer right to refund for defective goods/services. Custom services may be exempt.</li>
+<li><strong>DIFC:</strong> Contracts Law DIFC Law No. 6/2004 — breach gives right to damages and termination with restitution. Penalty clauses subject to DIFC court discretion.</li>
+<li><strong>ADGM:</strong> Similar contract law framework. Unfair contract terms provisions for consumers.</li>
+<li>B2B: US framework applies. Penalty-like deductions subject to challenge under DIFC/ADGM contract law principles.</li>
+</ul>
+
+<h2><span class="sec-num">02</span> CURRENCY & PAYMENT METHOD</h2>
+<ul>
+<li>Refunds are processed in the original payment currency unless otherwise agreed.</li>
+<li>Exchange rate applied: the rate on the date the refund is processed, not the date of the original payment. Client bears exchange rate risk.</li>
+<li>International wire transfer fees: deducted from refund amount unless the refund was necessitated by Hellcorp's error, in which case Hellcorp bears the fees.</li>
+</ul>
+
+<h2><span class="sec-num">03</span> TAX IMPLICATIONS</h2>
+<ul>
+<li>Refunds may affect prior tax filings. Hellcorp issues credit notes or amended invoices as required by local tax law.</li>
+<li>EU: VAT credit notes issued per Member State VAT directive requirements.</li>
+<li>UK: VAT credit notes within 30 days per UK VAT Regulations 1995.</li>
+<li>Australia: GST adjustment on Business Activity Statement (BAS).</li>
+<li>India: GST credit note within prescribed time per CGST Rules.</li>
+<li>Client is responsible for adjusting their own tax filings. Hellcorp provides supporting documentation upon request.</li>
+</ul>
+
+<h2><span class="sec-num">04</span> GLOBAL DISPUTE RESOLUTION</h2>
+<table>
+<thead><tr><th>Jurisdiction</th><th>Governing Law</th><th>Jurisdiction/Forum</th></tr></thead>
+<tbody>
+<tr><td>UK</td><td>England & Wales</td><td>English courts</td></tr>
+<tr><td>Canada</td><td>Ontario</td><td>Ontario courts</td></tr>
+<tr><td>Australia</td><td>NSW</td><td>Federal Court / NSW courts</td></tr>
+<tr><td>Japan</td><td>Japan</td><td>Tokyo District Court</td></tr>
+<tr><td>Singapore</td><td>Singapore</td><td>State Courts</td></tr>
+<tr><td>South Korea</td><td>Republic of Korea</td><td>Seoul Central District Court</td></tr>
+<tr><td>Brazil</td><td>Brazil</td><td>Courts of São Paulo</td></tr>
+<tr><td>India</td><td>India</td><td>Courts in Bengaluru</td></tr>
+<tr><td>UAE</td><td>UAE federal / DIFC / ADGM</td><td>Dubai courts / DIFC courts</td></tr>
+</tbody>
+</table>
+<div class="hb"><p><strong>Global Contact:</strong> <span style="color:var(--hell-red)">billing@hellcorp.io</span> | Local entities: Dublin (EU), London (UK), Singapore (APAC), New York (Americas/Global)</p></div>
+</div>
+</div>
+
+<footer>
+<div class="flogo">ʜᴇʟʟ ᴄᴏʀᴘ</div>
+<div class="fcopy">© 2025 HELLCORP INC. ALL RIGHTS RESERVED.</div>
+<div class="flinks">
+<a href="terms.html">Terms</a>
+<a href="policy.html">Privacy</a>
+<a href="refund.html">Refunds</a>
+</div>
+</footer>
+<script>
+const c=document.getElementById('cursor'),r=document.getElementById('cursorRing');let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;c.style.left=mx+'px';c.style.top=my+'px';});
+(function a(){rx+=(mx-rx)*.15;ry+=(my-ry)*.15;r.style.left=rx+'px';r.style.top=ry+'px';requestAnimationFrame(a);})();
+document.querySelectorAll('a,button').forEach(el=>{el.addEventListener('mouseenter',()=>{c.style.transform='translate(-50%,-50%) scale(2)';r.style.transform='translate(-50%,-50%) scale(1.5)';r.style.borderColor='rgba(255,0,34,.8)';});el.addEventListener('mouseleave',()=>{c.style.transform='translate(-50%,-50%) scale(1)';r.style.transform='translate(-50%,-50%) scale(1)';r.style.borderColor='rgba(255,0,34,.5)';});});
+function sw(id,btn){document.querySelectorAll('.jc').forEach(c=>c.classList.remove('active'));document.querySelectorAll('.jtabs button').forEach(b=>b.classList.remove('active'));document.getElementById('jur-'+id).classList.add('active');btn.classList.add('active');}
+</script>
+</body>
+</html>
